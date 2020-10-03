@@ -14,7 +14,7 @@ node{
     }*/
 
     stage ('Clone Repository'){
-        git url: 'https://github.com/maksym-butusov/docker-intermine-gradle'
+        git url: 'https://github.com/maksym-butusov/Final-task-app-intermine' ,credentialsId: 'jenkins_credentials'
     }
 
    def app
