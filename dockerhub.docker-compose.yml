@@ -12,17 +12,18 @@ services:
       - ./data/mine/intermine:/home/intermine/.intermine
       # - ./data/mine/[PUT_YOUR_MINE_NAME_HERE]:/home/intermine/intermine/[PUT_YOUR_MINE_NAME_HERE]
       - ./data/mine/biotestmine:/home/intermine/intermine/biotestmine
- environment:
+    environment:
       - MINE_NAME=${MINE_NAME:-biotestmine}
       - MINE_REPO_URL=${MINE_REPO_URL:-}
       - IM_DATA_DIR=${IM_DATA_DIR:-DATA_DIR}
-      - MEM_OPTS=${MEM_OPTS:-"-Xmx2g -Xms1g"}
+      - MEM_OPTS=${MEM_OPTS:-"-Xmx1g -Xms200m"}
       - IM_REPO_URL=${IM_REPO_URL:-}
       - IM_REPO_BRANCH=${IM_REPO_BRANCH:-}
     depends_on: 
       - postgres
       - solr
       - tomcat
+
   postgres:
     container_name: intermine_postgres
     image: incepti0n/intermine_postgres:latest
