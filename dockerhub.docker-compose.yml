@@ -34,7 +34,7 @@ services:
     container_name: intermine_solr
     image: incepti0n/intermine_solr:latest
     environment:
-      - MEM_OPTS=${MEM_OPTS:-"-Xmx500m -Xms100m"}
+      - MEM_OPTS=${MEM_OPTS:-"-Xmx128m -Xms128m"}
       - MINE_NAME=${MINE_NAME:-biotestmine}
         #user: ${UID:-1000}:${GID:-1000}
     volumes:
@@ -44,7 +44,7 @@ services:
     container_name: intermine_tomcat
     image: incepti0n/intermine_tomcat:latest
     environment:
-      - MEM_OPTS=${MEM_OPTS:-"-Xmx1g -Xms500m"}
+      - MEM_OPTS=${MEM_OPTS:-"-Xmx128m -Xms128m"}
     ports:
       - ${TOMCAT_HOST_PORT:-9999}:${TOMCAT_PORT:-8080}
 
